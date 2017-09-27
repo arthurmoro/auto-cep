@@ -1,4 +1,4 @@
-# viacep_plugin
+# Plugin ViaCep
 Este é um repositório JavaScript para facilitar a implementação do 
 [ViaCep](https://viacep.com.br)
 
