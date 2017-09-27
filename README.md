@@ -19,10 +19,11 @@ procurar e adicionar todos os campos sem problemas.
 
 Ex.: `<input type="text" data-auto-cep="logradouro" />`
 #### E esses campos são:
-    * logradouro
-    * cidade
-    * bairro
-    * estado
+* logradouro
+* cidade
+* bairro
+* estado
+
 Completando esses requisitos, assim que o ViaCep retornar a resposta estes campos serão preenchidos automaticamente.
 Caso prefira você pode completar você mesmo, para isso use as funções:
 * ViaCep.getLogradouro();
