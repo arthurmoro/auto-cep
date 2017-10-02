@@ -1,1 +1,1 @@
-var gulp = require('gulp');
+require('./gulp/taks/uglify');
