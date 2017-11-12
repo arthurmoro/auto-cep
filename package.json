@@ -1,0 +1,31 @@
+{
+    "name": "auto_cep",
+    "version": "1.0.0",
+    "description": "Este é um plugin para buscar o CEP no viacep",
+    "main": "gulpfile.js",
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babelify": "^8.0.0",
+        "browserify": "^14.5.0",
+        "browsersync": "^0.0.1-security",
+        "gulp": "^3.9.1",
+        "gulp-connect": "^5.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-uglify": "^3.0.0",
+        "vinyl-source-stream": "^1.1.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arthurmoro/viacep_plugin.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/arthurmoro/viacep_plugin/issues"
+    },
+    "homepage": "https://github.com/arthurmoro/viacep_plugin#readme"
+}

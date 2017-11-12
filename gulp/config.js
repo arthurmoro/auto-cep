@@ -1,4 +1,4 @@
-return config = {
-    src: './build/',
-    dest: './dest/'
-};
+module.exports = {
+    src: './src',
+    dest: './dist'
+}
