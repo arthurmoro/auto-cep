@@ -1,4 +1,4 @@
-var CepError = require("./error/request_error");
+var CepError = require("../error/request_error");
 
 let baseurl = `https://viacep.com.br/ws/`;
 let basetype = `/json`;
