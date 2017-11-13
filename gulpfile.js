@@ -17,12 +17,12 @@ gulp.task('browsersync', () => {
 });
 
 gulp.task('browserify', () => {
-    var bundle = b('./src/js', {
+    var bundle = b('./src/js/main.js', {
         debug: true,
         sourceMap: false
     });
     bundle.bundle()
-        .pipe(source('./src/js/index.js'))
+        .pipe(source('./src/js/*.js'))
         .pipe(buffer())
         .pipe(rename('bundle.js'))
         .pipe(gulp.dest(config.dest + '/js/'));
