@@ -7,8 +7,6 @@ Este é um repositório JavaScript para facilitar a implementação do
 
 Este plugin surgiu com o intuito de facilitar a minha vida na hora de implementar qualquer módulo que precise de preenchimento obritório de CEP! 
 
-:D
-
 # Usando
 
 Para utilizar é muito simples:
@@ -42,6 +40,6 @@ Independendo da api que retornar primeiro o resultado é sempre o mesmo:
     }
 ```
 
-# Use e abuse. 
+### Use e abuse. 
 
-# E não esqueça de me reportar anomalidades!
+### E não esqueça de me reportar anomalidades!
