@@ -1,7 +1,7 @@
 # Plugin de cep automático 
 Este é um repositório JavaScript para facilitar a implementação do 
 [ViaCep](https://viacep.com.br)
-[BuscaCep] (http://apps.widenet.com.br/busca-cep/api/cep/)
+[BuscaCep](http://apps.widenet.com.br/busca-cep/api/cep/)
 
 # Porque ele foi criado?
 
@@ -18,13 +18,20 @@ npm install --save auto_cep
 
 Para realizar a chamada também é bem simples: 
 
-Basta executar o comando: 
-
-app.autocep('00000000');
-
-app.autocep('00000-000');
-
-app.autocep('00.000-000');
+```javascript
+const auto_cep = require("auto_cep");
+(async() => {
+    const cep_result = await cep_plugin("01311-200");
+    console.log(cep_result)
+})
+```
+```javascript
+import AutoCep from "auto_cep";
+(async() => {
+    const cep_result = await cep_plugin("01311-200");
+    console.log(cep_result)
+})
+```
 
 Não há restrição de formato. O plugin se encarregara de limpar a string e retornar o endereço de forma maneira pra você.
 
@@ -36,7 +43,7 @@ Independendo da api que retornar primeiro o resultado é sempre o mesmo:
         cidade: 'São Paulo',
         cep: '01311-200',
         estado: 'SP',
-        origin: 'buscacep OU viacep'
+        origin: 'buscacep | viacep'
     }
 ```
 

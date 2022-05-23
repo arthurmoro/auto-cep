@@ -1,17 +1,12 @@
-module.exports = {
-    addressObject: {
-        logradouro: '',
-        bairro: '',
-        cidade: '',
-        cep: '',
-        estado: '',
-        origin: ''
-    },
-    cleanCep: (cep) => {
+import { AddressType } from "../AddressType";
+
+export default class CepHelper {
+    static cleanCep(cep) {
         return cep.replace(/\D/g, '');
-    },
-    setResponseViaCep: cepObject => {
-        this.addressObject = {
+    }
+
+    static getResponseViaCep(cepObject): AddressType {
+        return {
             logradouro: cepObject.logradouro,
             bairro: cepObject.bairro,
             cidade: cepObject.localidade,
@@ -19,9 +14,10 @@ module.exports = {
             estado: cepObject.uf,
             origin: 'viacep'
         };
-    },
-    setResponseBuscaCep: cepObject => {
-        this.addressObject = {
+    }
+
+    static getResponseBuscaCep(cepObject): AddressType {
+        return {
             logradouro: cepObject.address,
             bairro: cepObject.district,
             cidade: cepObject.city,
@@ -29,8 +25,5 @@ module.exports = {
             estado: cepObject.state,
             origin: 'buscacep'
         };
-    },
-    getResponse: () => {
-        return this.addressObject;
     }
-};
+}
