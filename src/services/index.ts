@@ -1,7 +1,7 @@
 import BuscaCep from "./requests/BuscaCep"
 import ViaCep from "./requests/ViaCep"
 
-export async function cepPromise(cep) {
+export async function cepPromise(cep: string) {
   const viaCep = new ViaCep(cep);
   const buscaCep = new BuscaCep(cep);
 

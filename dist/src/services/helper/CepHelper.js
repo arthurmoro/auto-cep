@@ -1,12 +1,10 @@
-import { BuscaCepResponse, ViaCepResponse } from "../../types/Cep";
-import { AddressType } from "../AddressType";
-
-export default class CepHelper {
-    static cleanCep(cep: string) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class CepHelper {
+    static cleanCep(cep) {
         return cep.replace(/\D/g, '');
     }
-
-    static getResponseViaCep(cepObject: ViaCepResponse): AddressType {
+    static getResponseViaCep(cepObject) {
         return {
             logradouro: cepObject.logradouro,
             bairro: cepObject.bairro,
@@ -16,8 +14,7 @@ export default class CepHelper {
             origin: 'viacep'
         };
     }
-
-    static getResponseBuscaCep(cepObject: BuscaCepResponse): AddressType {
+    static getResponseBuscaCep(cepObject) {
         return {
             logradouro: cepObject.address,
             bairro: cepObject.district,
@@ -28,3 +25,4 @@ export default class CepHelper {
         };
     }
 }
+exports.default = CepHelper;

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AddressType } from "../AddressType";
 import CepHelper from "../helper/CepHelper";
 
 export default class ViaCep {
@@ -7,7 +8,7 @@ export default class ViaCep {
 
   constructor(private cep: string) { }
 
-  async search() {
+  async search(): Promise<AddressType | null> {
     try {
       const { data } = await axios.get(`${this.baseurl}${CepHelper.cleanCep(this.cep)}${this.basetype}`)
       return CepHelper.getResponseViaCep(data);
