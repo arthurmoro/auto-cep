@@ -20,17 +20,12 @@ Para realizar a chamada também é bem simples:
 
 ```javascript
 const auto_cep = require("auto_cep");
-(async() => {
-    const cep_result = await cep_plugin("01311-200");
-    console.log(cep_result)
-})
+AutoCep("01311-200").then(endereco => { console.log(endereco) });
 ```
+
 ```javascript
 import AutoCep from "auto_cep";
-(async() => {
-    const cep_result = await cep_plugin("01311-200");
-    console.log(cep_result)
-})
+AutoCep("01311-200").then(endereco => { console.log(endereco) });
 ```
 
 Não há restrição de formato. O plugin se encarregara de limpar a string e retornar o endereço de forma maneira pra você.
