@@ -24,10 +24,16 @@
         "type": "git",
         "url": "git+https://github.com/arthurmoro/viacep_plugin.git"
     },
-    "author": "",
+    "author": "Arthur Moro",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/arthurmoro/viacep_plugin/issues"
     },
-    "homepage": "https://github.com/arthurmoro/viacep_plugin#readme"
+    "homepage": "https://github.com/arthurmoro/viacep_plugin#readme",
+    "keywords": [
+        "viacep",
+        "buscacep",
+        "brasil",
+        "cep"
+    ]
 }

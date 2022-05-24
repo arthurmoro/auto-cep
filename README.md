@@ -33,13 +33,13 @@ Não há restrição de formato. O plugin se encarregara de limpar a string e re
 Independendo da api que retornar primeiro o resultado é sempre o mesmo:
 ```javascript
 {
-        logradouro: 'Avenida Paulista',
-        bairro: 'Bela Vista',
-        cidade: 'São Paulo',
-        cep: '01311-200',
-        estado: 'SP',
-        origin: 'buscacep | viacep'
-    }
+    logradouro: 'Avenida Paulista',
+    bairro: 'Bela Vista',
+       cidade: 'São Paulo',
+    cep: '01311-200',
+    estado: 'SP',
+    origin: 'buscacep | viacep'
+}
 ```
 
 ### Use e abuse. 
