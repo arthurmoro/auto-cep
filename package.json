@@ -1,6 +1,6 @@
 {
     "name": "auto_cep",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "description": "Este é um plugin para buscar o CEP no viacep",
     "main": "./dist/main.js",
     "dependencies": {
