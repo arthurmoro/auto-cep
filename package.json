@@ -4,7 +4,8 @@
     "description": "Este é um plugin para buscar o CEP no viacep",
     "main": "./dist/main.js",
     "dependencies": {
-        "axios": "^0.27.2"
+        "axios": "^0.27.2",
+        "form-data": "^4.0.0"
     },
     "devDependencies": {
         "@types/jest": "^27.5.1",

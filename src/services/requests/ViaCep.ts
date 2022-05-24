@@ -1,6 +1,5 @@
 import axios from "axios";
-import { AddressType } from "../AddressType";
-import CepHelper from "../helper/CepHelper";
+import { AddressResponse, ViaCepResponse } from "../../types/Cep";
 
 export default class ViaCep {
   private baseurl = `https://viacep.com.br/ws/`;
@@ -8,13 +7,22 @@ export default class ViaCep {
 
   constructor(private cep: string) { }
 
-  async search(): Promise<AddressType | null> {
-    try {
-      const { data } = await axios.get(`${this.baseurl}${CepHelper.cleanCep(this.cep)}${this.basetype}`)
-      return CepHelper.getResponseViaCep(data);
-    } catch (err) {
-      return null
-    }
+  private getResponse(data: ViaCepResponse): AddressResponse {
+    return {
+      logradouro: data.logradouro,
+      bairro: data.bairro,
+      cidade: data.localidade,
+      cep: data.cep,
+      estado: data.uf,
+      origin: 'viacep'
+    };
+
+  }
+
+  async search(): Promise<AddressResponse> {
+
+    const { data } = await axios.get(`${this.baseurl}${this.cep}${this.basetype}`)
+    return this.getResponse(data);
 
   }
 }

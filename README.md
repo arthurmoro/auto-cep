@@ -1,7 +1,5 @@
 # Plugin de cep automático 
-Este é um repositório JavaScript para facilitar a implementação do 
-[ViaCep](https://viacep.com.br)
-[BuscaCep](http://apps.widenet.com.br/busca-cep/api/cep/)
+Este é um repositório JavaScript para facilitar a implementação do [ViaCep](https://viacep.com.br) e [BuscaCep](http://apps.widenet.com.br/busca-cep/api/cep/)
 
 # Porque ele foi criado?
 

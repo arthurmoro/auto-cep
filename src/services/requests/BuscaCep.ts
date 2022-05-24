@@ -1,8 +1,5 @@
 import axios from "axios";
-
-import { AddressType } from "../AddressType";
-import CepHelper from "../helper/CepHelper";
-
+import { AddressResponse, BuscaCepResponse } from "../../types/Cep";
 
 export default class BuscaCep {
   private baseurl = `https://apps.widenet.com.br/busca-cep/api/cep/`;
@@ -10,14 +7,21 @@ export default class BuscaCep {
 
   constructor(private cep: string) { }
 
-  async search(): Promise<AddressType | null> {
-    try {
-      const { data } = await axios.get(`${this.baseurl}${CepHelper.cleanCep(this.cep)}${this.basetype}`);
-      return CepHelper.getResponseBuscaCep(data);
-    } catch (err) {
-      console.log(err);
-    }
-    return null;
+  private getResponse(data: BuscaCepResponse): AddressResponse {
+    return {
+      logradouro: data.address,
+      bairro: data.district,
+      cidade: data.city,
+      cep: data.code,
+      estado: data.state,
+      origin: 'buscacep'
+    };
+  }
+
+  async search(): Promise<AddressResponse> {
+
+    const { data } = await axios.get(`${this.baseurl}${this.cep}${this.basetype}`);
+    return this.getResponse(data);
 
   }
 
