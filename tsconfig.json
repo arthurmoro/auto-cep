@@ -3,13 +3,13 @@
     "target": "es2021",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
   },
   "exclude": [
-    "./**/*.test.*"
+    "./__tests__"
   ]
 }
