@@ -1,2 +1,2 @@
 import { cepPromise } from "./services/index";
-export default cepPromise
+module.exports = cepPromise
