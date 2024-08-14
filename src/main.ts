@@ -1,2 +1,1 @@
-import { cepPromise } from "./services/index";
-module.exports = cepPromise
+export * from "./services";

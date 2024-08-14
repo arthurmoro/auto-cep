@@ -1,11 +1,14 @@
 import axios from "axios";
 import { AddressResponse, BuscaCepResponse } from "../../types/Cep";
+import { IAddressService } from "../../@domain/Services/IAddress.service";
 
-export default class BuscaCep {
+export default class BuscaCep implements IAddressService {
   private baseurl = `https://apps.widenet.com.br/busca-cep/api/cep/`;
   private basetype = `.json`;
 
-  constructor(private cep: string) { }
+  async getAddress(cep: string): Promise<AddressResponse> {
+    return await this.search(cep);
+  }
 
   private getResponse(data: BuscaCepResponse): AddressResponse {
     return {
@@ -14,15 +17,12 @@ export default class BuscaCep {
       cidade: data.city,
       cep: data.code,
       estado: data.state,
-      origin: 'buscacep'
+      origin: "buscacep",
     };
   }
 
-  async search(): Promise<AddressResponse> {
-
-    const { data } = await axios.get(`${this.baseurl}${this.cep}${this.basetype}`);
+  private async search(cep: string): Promise<AddressResponse> {
+    const { data } = await axios.get(`${this.baseurl}${cep}${this.basetype}`);
     return this.getResponse(data);
-
   }
-
 }

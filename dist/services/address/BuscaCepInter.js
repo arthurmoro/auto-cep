@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const form_data_1 = __importDefault(require("form-data"));
 class BuscaCepInter {
-    constructor(cep) {
-        this.cep = cep;
+    async getAddress(cep) {
+        return await this.search(cep);
     }
     getResponse(data) {
         if (data.erro || !data.dados || !data.dados.length) {
@@ -20,12 +20,12 @@ class BuscaCepInter {
             cidade: address.localidade,
             cep: address.cep,
             estado: address.uf,
-            origin: 'buscacep_inter'
+            origin: "buscacep_inter",
         };
     }
-    async search() {
+    async search(cep) {
         const formData = new form_data_1.default();
-        formData.append("endereco", this.cep);
+        formData.append("endereco", cep);
         formData.append("tipoCEP", "ALL");
         const { data } = await axios_1.default.post("https://buscacepinter.correios.com.br/app/endereco/carrega-cep-endereco.php", formData);
         return this.getResponse(data);
